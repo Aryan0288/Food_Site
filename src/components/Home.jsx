@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Nav from './Nav';
 export default function Home() {
   const [toggle, setToggle] = useState(false);
@@ -18,9 +19,9 @@ export default function Home() {
             <img src="images/italic_food-removebg-preview.png" className=' w-[200px] rounded-full' />
             <h2 className='md:text-[5rem] text-[3rem] mt-8 md:mb-14 mb-6 italic font-[500] font-["reey"]'>Italian Food</h2>
             <h4 className='text-[1.5rem] md:-ml-14  tracking-[4px] italic uppercase font-bold'>Enjoy Food</h4>
-            <a href='https://www.foodnetwork.com/recipes' target='_blank'>
-              <div className="button bg-white py-2 px-9 mt-8 font-bolder text-[#2e3034] uppercase  transition-all duration-500 hover:text-white">READ MORE</div>
-            </a>
+            {/* <a href='https://www.foodnetwork.com/recipes' target='_blank'> */}
+              <div className="button bg-white py-2 px-9 mt-8 font-bolder text-[#2e3034] uppercase  transition-all duration-500 hover:text-white"><NavLink to="/AddtoCart">READ MORE</NavLink> </div>
+            {/* </a> */}
             <p className='md:text-[20px] md:pr-36 max-md:w-[80%]'>
               Eating a wide variety of nutritious foods, including fruit, vegetables, nuts, seeds, and lean protein can help support your overall health.
             </p>
@@ -32,6 +33,7 @@ export default function Home() {
           </div>
           <div className="absolute lg:right-[28rem] lg:bottom-[-11rem] lg:flex hidden">
             <img src="./images/place_your_image_here_dou_10.png" alt="" />
+            
           </div>
           <div className="absolute lg:right-0 lg:bottom-[-26rem] lg:flex hidden">
             <img src="./images/place_your_image_here_dou_12.png" alt="" />
@@ -60,7 +62,7 @@ export default function Home() {
             </div>
             <div className="first-img">
               <img src="./images/place_your_image_here_dou_8.png" alt="" />
-              <h2 className='mt-[30px] text-[30px] text-[#343434] ml-[45px]'>BEEF BRACIOLE</h2>
+              <h2 className='mt-[30px] text-[30px] text-[#343434] ml-[45px]'>DEAR BRACIOLE</h2>
               <p className='w-[80%] ml-[45px] text-start text-[17px] text-[#343434]'>I have made this several times and we love it! After browning, I threw them into the Crock Pot and let them simmer for 4 hours. They were so tender that they cut with a fork.</p>
 
             </div>
@@ -183,7 +185,7 @@ export default function Home() {
 
           <div class="flex sm:flex-row flex-col gap-[4rem] pl-[3rem] text-center justify-center">
             <div class="content-1">
-              <h2 className='sm:text-[1.5rem] text-[1.3rem] font-[reey] font-[700] mb-[40px] text-[#333d42] tracking-[12px] leading-[3rem]'>PIZZA MARGHERITA</h2>
+              <h2 className='sm:text-[1.5rem] text-[1.1rem] font-[reey] font-[700] mb-[40px] text-[#333d42] tracking-[12px] leading-[3rem]'>PIZZA MARGHERITA</h2>
               <p className='sm:text-left text-center text-[1.17rem] text-[#333d42]'>
                 Modeled after the Italian flag with its green basil, white cheese and red sauce, the pizza Margherita is a Neapolitan specialty, cooked in a scorching oven. This dough requires nearly no work, and the sauce is hardly more complicated than blanching some tomatoes.</p>
 

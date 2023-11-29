@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import '../App.css';
+import '../componentCss/NavCss.css'
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import { auth } from '../Firebase';
@@ -29,7 +31,7 @@ export default function Nav(props) {
                 setUserName('');
                 setSetup(false);
             }
-        },[])
+        }, [])
     });
 
     const logOutHandler = () => {
@@ -51,20 +53,22 @@ export default function Nav(props) {
                 }
 
 
-                <ul className='flex gap-[3rem] text-[1.09rem] font-bold items-center'>
+                <ul className='flex gap-[3rem] text-[1.12rem] font-bold items-center'>
                     <li>
 
                     </li>
-                    <li><Link to="/Home">Home</Link></li>
-                    <li><Link to="/Menu">Menu</Link></li>
-                    <li><Link to="/Story">Our Story</Link></li>
-                    <li><Link to="/Contact">Contact Us</Link></li>
+                    <li><NavLink to="/Home">Home</NavLink></li>
+                    <li><NavLink to="/Menu">Menu</NavLink></li>
+                    <li><NavLink to="/Story">Our Story</NavLink></li>
+                    <li><NavLink to="/Contact">Contact Us</NavLink></li>
                     <li>
                         {
                             !setup && (
-                                <li><button className='border-[1px] border-white hover:bg-blue-800 transition-all duration-200 px-2 py-[5px] rounded'   >
-                                    <Link to="/SignUp">Sign Up</Link>
-                                </button></li>
+                                <NavLink to="/SignUp">
+                                    <li><button className='border-[1px] border-white hover:dark:bg-neutral-800 transition-all duration-200 px-2 py-[5px] rounded'   >
+                                        Sign Up
+                                    </button></li>
+                                </NavLink>
                             )
 
                         }
@@ -102,18 +106,18 @@ export default function Nav(props) {
 
             {toggle && (
                 <div className=' sm:hidden flex flex-col items-center gap-[2rem] pb-[2rem] sm:items-center cursor-pointer fixed left-0 right-0 bottom-0 top-0  z-30  bg-[#28292d] text-white '>
-                    
+
                     <div className='absolute flex justify-between w-[90%] mx-auto md:hidden'>
                         <img src="images/italic_food-removebg-preview.png" className='w-[100px] rounded-full' />
                         <button onClick={e => setToggle(!toggle)}>
-                            <i className="fa-solid fa-bars z-10" style={{ color: 'white', fontSize: '25px'}} />
+                            <i className="fa-solid fa-bars z-10" style={{ color: 'white', fontSize: '25px' }} />
                         </button>
                     </div>
                     <ul className='flex flex-col gap-5 text-[1.2rem] font-bold self-stretch text-center mt-28'>
-                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><Link to="/">Home</Link></li>
-                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><Link to="/Menu">Menu</Link></li>
-                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><Link to="/Story">Our Story</Link></li>
-                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><Link to="/Contact">Contact Us</Link></li>
+                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><NavLink to="/">Home</NavLink></li>
+                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><NavLink to="/Menu">Menu</NavLink></li>
+                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><NavLink to="/Story">Our Story</NavLink></li>
+                        <li className='border-2 border-white w-full py-4 hover:bg-black' onClick={e => setToggle(!toggle)}><NavLink to="/Contact">Contact Us</NavLink></li>
                         {
 
                             setup && (

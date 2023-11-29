@@ -20,7 +20,7 @@ function App() {
   return (
 
     <>
-      <div className='App'>
+      <div className='App select-none'>
         {/* <Nav /> */}
         <Routes>
           <Route path='/' element={<Home />}/>
